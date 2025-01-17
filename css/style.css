@@ -1,0 +1,10 @@
+ body { 
+	background-color: lightblue;
+	background-image: url('/images/bg-green.png');
+	background-size: 3%;
+    background-blend-mode: color-burn;
+} 
+h1 { 
+	color: white; 
+	text-align: center; 
+}
