@@ -1,0 +1,15 @@
+<? $element = $this->element ?>
+<? $errors = $element->getMessages() ?>
+<?
+	$type = $element->getType();
+	$type = strtolower(substr($type, strrpos($type, '_') + 1));
+?>
+
+<? $label = $element->isRequired() ? '<b>' . $element->getLabel() . '*</b>' : $element->getLabel() ?> 
+
+
+<p align='left'><?= $label ?>: <input type='<?= $type ?>'
+	<? foreach ($element->getAttribs() as $key => $value) { ?><?= $key ?>="<?= $value ?>" <? } ?>
+	name='<?= $element->getName() ?>'
+	value="<?= $element->getValue()?>"
+/> <? if (count($errors)) foreach($errors as $e) { print $e ?>. <? } ?></p>

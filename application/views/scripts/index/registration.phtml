@@ -1,0 +1,14 @@
+<? $this->headTitle('Registration') ?>
+
+<center>
+	<h1>Registration</h1>
+	<div style='width:350px;'>
+		<form method='post'>	
+			<?
+				foreach ($this->form as $element) {
+					print $element;
+				}	
+			?>
+		</form>
+	</div>
+</center>

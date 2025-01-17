@@ -1,0 +1,9 @@
+<html>
+<body style='background:#c9eef1;'>
+
+<? foreach ($this->chat as $message) { ?>
+	<p><?= date('H:i', $message->getTime()) ?> <?= $message->getMessage() ?></p>
+<? } ?>
+
+</body>
+</html>

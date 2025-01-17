@@ -1,0 +1,34 @@
+<div><p><?= date('H:i:s', time()) ?><p>
+	<? foreach($this->users as $user) { ?>
+		<p><?= $this->escape($user->getLogin()) ?> - <?= $this->escape($user->getName()) ?>
+			 - <?= $this->escape($user->getCity()) ?>
+			 - <?= date('m.d.Y', strtotime($user->getBirthday())) ?></p>
+	<? } ?>
+</div>
+
+<center>
+	<h2>Welcome</h2>
+	<h3>to the "Perfect Ages World"</h3>
+		<form method='post'>
+			<p>Nickname: <input type="text" name="nickname" value="<?= $this->form->nickname->getValue() ?>"/></p>
+			<p>Password: <input type="password" name="password" /></p>
+			<? if (!is_null($this->errors)) foreach ($this->errors as $error) { ?>
+				<? if (is_array($error)) foreach ($error as $text) { ?>
+					<p><?= $text ?></p>
+				<? } else { ?>
+					<p><?= $error ?></p>
+				<? } ?>
+			<? } ?>
+			<p><input type="submit" value="Enter" /></p>
+			<p><a href="<?= $this->url(array(
+				'controller' => 'index',
+				'action' => 'registration'
+			))?>">Registration</a></p>
+		</form>
+</center>
+
+<script>
+	if (self != top) {
+		top.location = self.location;
+	}
+</script>

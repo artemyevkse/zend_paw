@@ -1,0 +1,9 @@
+<div>
+	<p><?= date('H:i:s', time()) ?><p>
+	<p>Online</p>
+	<? foreach($this->users as $user) { ?>
+		<p><?= $this->escape($user->getLogin()) ?> - <?= $this->escape($user->getName()) ?>
+			 - <?= $this->escape($user->getCity()) ?>
+			 - <?= date('m.d.Y', strtotime($user->getBirthday())) ?></p>
+	<? } ?>
+</div>

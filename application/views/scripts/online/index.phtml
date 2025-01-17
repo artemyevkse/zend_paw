@@ -1,0 +1,22 @@
+<?php
+	$this->headTitle('Perfect Ages World');
+	
+	echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<?php echo $this->headTitle(); ?>
+</head>
+<frameset rows="65%,35%">
+   <frame name="main" src="/online/inner/" />
+   <frameset cols="80%,20%">
+	   <frame name="chat" src="/chat/" />
+	   <frame name="list" src="/online/location/" />
+   </frameset>
+   <noframes>
+      <body>
+         Your browser does not support frames.
+      </body>
+   </noframes>
+</frameset>
+</html>

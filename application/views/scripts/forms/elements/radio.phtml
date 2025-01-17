@@ -1,0 +1,22 @@
+<? $element = $this->element ?>
+<? $errors = $element->getErrors() ?>
+<? $value = $element->getValue() ?>
+
+
+<?
+	$inputs = array();
+
+	foreach ($element->getMultiOptions() as $key => $opt) {
+		$inputs[] = '<label>
+			<input type="radio"
+				name="' . $element->getName() . '" value="' . $key . '"
+				' . ($value == $key ? 'checked="checked"' : '') . '
+			>' . $opt
+		. '</label>';
+	}
+?>
+
+<p align='left'><?= $element->getLabel() ?>:
+<?= implode('', $inputs) ?>
+
+<? if (count($errors)) foreach($errors as $e) { print $e ?>. <? } ?></p>
